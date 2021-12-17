@@ -16,7 +16,7 @@ class CreateMemosTable extends Migration
         Schema::create('memos', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('content'); // contentカラム追加
-            $table->char('status',200); // charカラム追加
+            $table->string('status',200); // charカラム追加
             $table->timestamps();
         });
     }
