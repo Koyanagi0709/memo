@@ -10,7 +10,7 @@
     {{ Form::open(['method' => 'get']) }}
     {{ csrf_field() }}
     <div class='form-group'>
-        {{ Form::label('keyword', 'タイトル検索:') }}
+        {{ Form::label('keyword', 'タイトル検索') }}
         {{ Form::text('keyword', null, ['class' => 'form-control']) }}
     </div>
     <div class='form-group'>
@@ -36,7 +36,7 @@
                 <tbody>
                     @foreach ($memos as $memo)
                     <tr>
-                        {{-- メッセージ詳細ページへのリンク --}}
+                        {{-- メモ詳細ページへのリンク --}}
                         <td>{!! link_to_route('memos.show', $memo->id, ['memo' => $memo->id]) !!}</td>
                         @if (strlen($memo->status)>30)
                         <td>{{ mb_strimwidth($memo->status, 0, 30, '…') }}</td>
@@ -58,8 +58,8 @@
        
        
 
-        {{-- メッセージ作成ページへのリンク --}}
-        {!! link_to_route('memos.create', '新規タスクの投稿', [], ['class' => 'btn btn-primary']) !!}
+        {{-- メモ作成ページへのリンク --}}
+        {!! link_to_route('memos.create', '新規メモの投稿', [], ['class' => 'btn btn-primary']) !!}
 
     @else
         <div class="center jumbotron">
