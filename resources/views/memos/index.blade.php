@@ -38,18 +38,18 @@
                     <tr>
                         {{-- メモ詳細ページへのリンク --}}
                         <td>{!! link_to_route('memos.show', $memo->id, ['memo' => $memo->id]) !!}</td>
-                        @if (strlen($memo->status)>30)
+                        //@if (strlen($memo->status)>30)
                         <td>{{ mb_strimwidth($memo->status, 0, 30, '…') }}</td>
-                        @endif
-                        @if (strlen($memo->status)<30)
-                        <td>{{ $memo->status }}</td>
-                        @endif
-                        @if (strlen($memo->content)>40)
+                        //@endif
+                        //@if (strlen($memo->status)<30)
+                        //<td>{{ $memo->status }}</td>
+                        //@endif
+                        //@if (strlen($memo->content)>40)
                         <td>{{mb_strimwidth($memo->content, 0, 40, '…')}}</td>
-                        @endif
-                        @if (strlen($memo->content)<40)
-                        <td>{{ $memo->content }}</td>
-                        @endif
+                        //@endif
+                        //@if (strlen($memo->content)<40)
+                        //<td>{{ $memo->content }}</td>
+                        //@endif
                     </tr>
                     @endforeach
                 </tbody>
